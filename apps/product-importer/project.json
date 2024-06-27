@@ -1,0 +1,24 @@
+{
+  "name": "product-importer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/product-importer/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "product-importer:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "product-importer:build:development"
+        },
+        "production": {
+          "buildTarget": "product-importer:build:production"
+        }
+      }
+    }
+  }
+}
