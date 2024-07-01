@@ -10,8 +10,21 @@ module.exports = {
       target: 'node',
       compiler: 'tsc',
       main: './src/main.ts',
+      additionalEntryPoints: [
+        {
+          entryName: 'worker',
+          entryPath: './apps/product-importer/src/worker.ts',
+        },
+      ],
       tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
+      assets: [
+        './src/assets',
+        {
+          glob: '**/*.yaml',
+          input: './src/config',
+          output: 'config',
+        },
+      ],
       optimization: false,
       outputHashing: 'none',
     }),

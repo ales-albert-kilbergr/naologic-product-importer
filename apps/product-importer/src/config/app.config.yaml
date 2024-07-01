@@ -1,0 +1,14 @@
+app:
+  logLevel: ${LOG_LEVEL}
+  port: ${PORT}
+  environment: ${NODE_ENV}
+  gitCommitHash: ${GIT_COMMIT_HASH}
+  gitBranch: ${GIT_BRANCH}
+  name: Product Importer
+productImporter:
+  parallelCount: 4
+  filePath: assets/images40.txt
+mongo:
+  uri: ${MONGO_DB_URI}
+  username: ${MONGO_INITDB_ROOT_USERNAME}
+  password: ${MONGO_INITDB_ROOT_PASSWORD}

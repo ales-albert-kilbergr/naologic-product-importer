@@ -1,0 +1,33 @@
+{
+  "name": "testing-common-stubs",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/testing-common-stubs/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/testing-common-stubs",
+        "tsConfig": "libs/testing-common-stubs/tsconfig.lib.json",
+        "packageJson": "libs/testing-common-stubs/package.json",
+        "main": "libs/testing-common-stubs/src/index.ts",
+        "assets": ["libs/testing-common-stubs/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}
